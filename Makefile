@@ -1,15 +1,13 @@
 TAG=3.17-rc3
 
-all: build
+all: build copy
 
 build:
 	test -d linux || git clone -v \
 	https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git \
 	linux
 	cp config/config-$(TAG) linux/.config
-	cd linux && git checkout master
 	cd linux && git fetch
-	cd linux && git rebase
 	gpg --list-keys 00411886 || \
 	gpg --keyserver keys.gnupg.net --recv-key 00411886
 	cd linux && git verify-tag v$(TAG)
