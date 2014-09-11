@@ -1,5 +1,5 @@
 #!/bin/bash
-# postinst for wandboard-kernel
+# postinst for edgerouter-kernel
 #
 # see: dh_installdeb(1)
 
@@ -27,7 +27,7 @@ copy_kernel() {
   choice=$(($choice -1))
   if (($choice < 0)) || (($choice >= ${#options[@]})); then
 	echo "You may copy the kernel later with"
-	echo "dpkg-reconfigure wandboard-kernel-image-stable"
+	echo "dpkg-reconfigure edgerouter-kernel-image"
     exit
   fi
   version=${options[$choice]}
