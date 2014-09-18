@@ -24,7 +24,9 @@ copy:
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	cp linux/vmlinux linux/deploy/$$VERSION.vmlinux
 	cd linux && make modules_install INSTALL_MOD_PATH=deploy
-	cd linux && make headers_install INSTALL_HDR_PATH=deploy/usr
+	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
+	cd linux && make headers_install \
+	INSTALL_HDR_PATH=deploy/usr/src/linux-headers-$$VERSION
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	mkdir -p -m 755 linux/deploy/lib/firmware/$$VERSION; true
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
@@ -47,6 +49,8 @@ install:
 	cp linux/deploy/$$VERSION-headers.tar.gz $(DESTDIR)/boot;true
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	tar -xzf linux/deploy/$$VERSION-modules-firmware.tar.gz -C $(DESTDIR)/
+	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
+	tar -xzf linux/deploy/$$VERSION-headers.tar.gz -C $(DESTDIR)/
 
 clean:
 	test -d linux && cd linux && rm -f .config || true
