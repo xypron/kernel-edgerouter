@@ -1,3 +1,9 @@
+edgerouter-kernel (3.17.0.3) unstable; urgency=medium
+
+  * Kernel 3.17-rc5 
+
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Thu, 18 Sep 2014 05:49:07 +0200
+
 edgerouter-kernel (3.17.0.2) unstable; urgency=medium
 
   * Adjustements for systemd

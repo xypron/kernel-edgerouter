@@ -2,7 +2,8 @@ Source: edgerouter-kernel
 Section: kernel
 Priority: optional
 Maintainer: Heinrich Schuchardt <xypron.glpk@gmx.de>
-Build-Depends: debhelper, cpio, kmod, python, python-six, bc, gcc
+Build-Depends: debhelper, cpio, kmod, python, python-six, bc, gcc,
+ libncurses5-dev
 Standards-Version: 3.9.4.0
 Homepage: https://www.kernel.org/
 
