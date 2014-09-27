@@ -52,6 +52,14 @@ install:
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	tar -xzf linux/deploy/$$VERSION-headers.tar.gz -C $(DESTDIR)/
 
+uninstall:
+	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
+	rm $(DESTDIR)/lib/modules/$$VERSION -rf
+	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
+	rm $(DESTDIR)/lib/firmware/$$VERSION -rf
+	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
+	rm $(DESTDIR)/usr/src/linux-headers-$$VERSION -rf
+
 clean:
 	test -d linux && cd linux && rm -f .config || true
 	test -d linux && cd linux git clean -df || true

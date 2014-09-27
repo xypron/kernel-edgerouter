@@ -1,5 +1,5 @@
 #!/bin/bash
-# postinst for edgerouter-kernel
+# postrm for edgerouter-kernel
 #
 # see: dh_installdeb(1)
 
@@ -37,12 +37,12 @@ copy_kernel() {
 }
 
 # summary of how this script can be called:
-# * <postinst> `configure' <most-recently-configured-version>
-# * <old-postinst> `abort-upgrade' <new version>
-# * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+# * <postrm> `configure' <most-recently-configured-version>
+# * <old-postrm> `abort-upgrade' <new version>
+# * <conflictor's-postrm> `abort-remove' `in-favour' <package>
 # <new-version>
-# * <postinst> `abort-remove'
-# * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+# * <postrm> `abort-remove'
+# * <deconfigured's-postrm> `abort-deconfigure' `in-favour'
 # <failed-install-package> <version> `removing'
 # <conflicting-package> <version>
 # for details, see http://www.debian.org/doc/debian-policy/ or
@@ -58,11 +58,11 @@ case "$1" in
     copy_kernel
     ;;
 
-    abort-upgrade|abort-remove|abort-deconfigure)
+    abort-upgrade|abort-remove|abort-deconfigure|upgrade)
     ;;
 
     *)
-        echo "postinst called with unknown argument \`$1'" >&2
+        echo "postrm called with unknown argument \`$1'" >&2
         exit 1
     ;;
 esac
