@@ -51,7 +51,7 @@ copy_kernel() {
 set -e
 
 case "$1" in
-    configure|failed-upgrade)
+    configure|upgrade|failed-upgrade)
 
     echo $0 $1 $2
 
