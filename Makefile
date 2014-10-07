@@ -1,4 +1,4 @@
-TAG=3.17-rc7
+TAG=3.17
 
 all: build copy
 
@@ -10,6 +10,8 @@ build:
 	cd linux && git fetch
 	gpg --list-keys 00411886 || \
 	gpg --keyserver keys.gnupg.net --recv-key 00411886
+	gpg --list-keys 6092693E || \
+	gpg --keyserver keys.gnupg.net --recv-key 6092693E
 	cd linux && git verify-tag v$(TAG)
 	cd linux && git checkout v$(TAG)
 	cd linux && make clean
