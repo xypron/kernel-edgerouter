@@ -1,0 +1,4 @@
+# ignore kernel source
+tar-ignore = "linux*"
+# ignore git related files
+tar-ignore = ".git*"
