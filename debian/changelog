@@ -1,5 +1,5 @@
-edgerouter-kernel (3.17.0.7) unstable; urgency=medium
+edgerouter-kernel (3.17.0.8) unstable; urgency=medium
 
   * Kernel 3.17 
 
- -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Tue, 07 Oct 2014 19:39:43 +0200
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Mon, 16 Oct 2014 19:39:43 +0200
