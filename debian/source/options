@@ -2,3 +2,5 @@
 tar-ignore = "linux*"
 # ignore git related files
 tar-ignore = ".git*"
+# ignore log file
+tar-ignore = "job.log"
