@@ -30,7 +30,7 @@ mounted as /boot/uboot.
 To build the kernel without debian packageing run
 
 ```
-make -j3
+make
 sudo make install
 ```
 
