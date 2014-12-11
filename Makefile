@@ -1,4 +1,4 @@
-TAG=3.18-rc3
+TAG=3.18
 
 all: build copy
 
