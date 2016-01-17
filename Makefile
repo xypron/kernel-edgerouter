@@ -1,4 +1,4 @@
-TAG=4.2
+TAG=4.4
 
 all: build copy
 

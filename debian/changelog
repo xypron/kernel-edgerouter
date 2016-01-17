@@ -1,3 +1,9 @@
+edgerouter-kernel (4.4.0.0) unstable; urgency=medium
+
+  * Kernel 4.4
+
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Sun, 17 Jan 2016 13:14:57 +0100
+
 edgerouter-kernel (4.2.0.0) unstable; urgency=medium
 
   * Kernel 4.2 
