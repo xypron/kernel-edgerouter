@@ -6,7 +6,6 @@ build:
 	test -d linux || git clone -v \
 	https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git \
 	linux
-	cp config/config-$(TAG) linux/.config
 	cd linux && git fetch
 	gpg --list-keys 00411886 || \
 	gpg --keyserver keys.gnupg.net --recv-key 00411886
@@ -14,7 +13,8 @@ build:
 	gpg --keyserver keys.gnupg.net --recv-key 6092693E
 	cd linux && git verify-tag v$(TAG)
 	cd linux && git checkout v$(TAG)
-	cd linux && make clean
+	cd linux && make distclean
+	cp config/config-$(TAG) linux/.config
 	cd linux && make oldconfig
 	cd linux && make -j3 vmlinux firmware modules
 
