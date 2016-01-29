@@ -7,10 +7,10 @@ build:
 	https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git \
 	linux
 	cd linux && git fetch
-	gpg --list-keys 00411886 || \
-	gpg --keyserver keys.gnupg.net --recv-key 00411886
-	gpg --list-keys 6092693E || \
-	gpg --keyserver keys.gnupg.net --recv-key 6092693E
+	gpg --list-keys 79BE3E4300411886 || \
+	gpg --keyserver keys.gnupg.net --recv-key 79BE3E4300411886
+	gpg --list-keys 38DBBDC86092693E || \
+	gpg --keyserver keys.gnupg.net --recv-key 38DBBDC86092693E
 	cd linux && git verify-tag v$(TAG)
 	cd linux && git checkout v$(TAG)
 	cd linux && make distclean
