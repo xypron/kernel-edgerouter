@@ -1,4 +1,4 @@
-TAG=4.7
+TAG=4.7.2
 
 all: prepare build copy
 
