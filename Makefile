@@ -72,5 +72,5 @@ uninstall:
 
 clean:
 	test -d linux && cd linux && rm -f .config || true
-	test -d linux && cd linux git clean -df || true
+	test -d linux && cd linux && git clean -df || true
 
