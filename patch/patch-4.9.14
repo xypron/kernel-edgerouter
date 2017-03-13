@@ -1,0 +1,2 @@
+#!/bin/sh
+git am ../patch/0001-libceph-use-BUG-instead-of-BUG_ON-1.patch
