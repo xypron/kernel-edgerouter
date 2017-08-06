@@ -1,4 +1,10 @@
-edgerouter-kernel (4.9.14.2) unstable; urgency=medium
+edgerouter-kernel (4.9.40.0) unstable; urgency=medium
+
+  * Kernel 4.9.40
+
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Sun, 06 Aug 2017 21:07:16 +0200
+
+edgerouter-kernel (4.9.31.0) unstable; urgency=medium
 
   * Kernel 4.9.31
 
