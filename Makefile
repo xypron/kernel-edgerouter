@@ -1,4 +1,4 @@
-TAG=4.19.10
+TAG=5.4.53
 
 all: prepare build copy
 
@@ -24,7 +24,7 @@ build:
 	cd linux && make distclean
 	cp config/config-$(TAG) linux/.config
 	cd linux && make oldconfig
-	cd linux && make -j3 vmlinux firmware modules
+	cd linux && make -j3 vmlinux modules
 
 copy:
 	rm linux/deploy -rf
@@ -38,11 +38,6 @@ copy:
 	cd linux && make headers_install \
 	INSTALL_HDR_PATH=deploy/usr/src/linux-headers-$$VERSION
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
-	mkdir -p -m 755 linux/deploy/lib/firmware/$$VERSION; true
-	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
-	mv linux/deploy/lib/firmware/* \
-	linux/deploy/lib/firmware/$$VERSION; true
-	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	cd linux/deploy && tar -czf $$VERSION-modules-firmware.tar.gz lib
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	cd linux/deploy && tar -czf $$VERSION-headers.tar.gz usr
@@ -53,8 +48,6 @@ install:
 	cp linux/deploy/$$VERSION.vmlinux $(DESTDIR)/boot;true
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	cp linux/deploy/config-$$VERSION $(DESTDIR)/boot;true
-	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
-	cp linux/deploy/$$VERSION-modules-firmware.tar.gz $(DESTDIR)/boot;true
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \
 	cp linux/deploy/$$VERSION-headers.tar.gz $(DESTDIR)/boot;true
 	VERSION=$$(cd linux && make --no-print-directory kernelversion) && \

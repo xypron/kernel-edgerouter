@@ -27,7 +27,7 @@ mounted as /boot/uboot.
 
 <h2>Manual build and installation</h2>
 
-To build the kernel without debian packageing run
+To build the kernel without Debian packaging run
 
 ```
 make
