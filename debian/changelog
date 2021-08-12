@@ -1,3 +1,9 @@
+edgerouter-kernel (5.10.57.0) unstable; urgency=medium
+
+  * Kernel 5.10.57
+
+ -- Heinrich Schuchardt <xypron.glpk@gmx.de>  Fri, 13 Aug 2021 10:12:10 +0200
+
 edgerouter-kernel (5.4.139.0) unstable; urgency=medium
 
   * Kernel 5.4.139
